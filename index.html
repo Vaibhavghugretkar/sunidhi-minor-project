@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Learning Mentor</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="cursor"></div>
+    <div id="cursor-blur"></div>
+
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#cognitive">Cognitive</a></li>
+                <li><a href="#learning-styles">Learning Styles</a></li>
+                <li><a href="#study-section">Study</a></li>
+                <li><a href="#performance">Performance</a></li>
+                <li><a href="#extracurricular">Extracurricular</a></li>
+                <li><a href="#classroom-engagement">Engagement</a></li>
+                <li><a href="#timed-quiz">Timed Quiz</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home">
+            <h1>Student Learning Mentor</h1>
+            <p>Track your progress, improve your skills, and discover your learning style</p>
+            <a href="#cognitive" class="cta-button" aria-label="Start Learning">RECOGNIZE PREFERENCES</a>
+        </section>
+
+        <section id="cognitive">
+            <h2>Cognitive Abilities</h2>
+            <div class="info-card">
+                <h3>Memory and Retention</h3>
+                <p>Memory and retention are crucial for effective learning. Improve your memory by practicing techniques like visualization, association, and repetition.</p>
+            </div>
+            <div class="info-card">
+                <h3>Problem-Solving Skills</h3>
+                <p>Problem-solving skills help you tackle challenges. Develop these skills by practicing logical reasoning, critical thinking, and analytical problem-solving.</p>
+            </div>
+            <div class="info-card">
+                <h3>Learning Pace</h3>
+                <p>Your learning pace affects how quickly you can grasp new concepts. Identify your optimal learning speed and adapt your study habits accordingly.</p>
+            </div>
+            <h2>Cognitive Abilities Quiz</h2>
+            <div id="cognitive-quiz">
+                <p id="cognitive-question"></p>
+                <div id="cognitive-options"></div>
+                <button id="cognitive-submit">Submit</button>
+            </div>
+            <p id="cognitive-result"></p>
+        </section>
+
+        <section id="learning-styles">
+            <h2>Learning Styles and Preferences</h2>
+            <div class="info-card">
+                <h3>Visual Learning</h3>
+                <p>Visual learners prefer using images, diagrams, and videos to understand information. Use visual aids to enhance your learning experience.</p>
+            </div>
+            <div class="info-card">
+                <h3>Auditory Learning</h3>
+                <p>Auditory learners benefit from listening to lectures, discussions, and audio recordings. Engage in group discussions and listen to educational podcasts.</p>
+            </div>
+            <div class="info-card">
+                <h3>Kinesthetic Learning</h3>
+                <p>Kinesthetic learners prefer hands-on activities and experiments. Incorporate physical activities and practical experiences into your study routine.</p>
+            </div>
+            <h2>Learning Style Assessment</h2>
+            <div id="learning-style-quiz">
+                <p id="learning-style-question"></p>
+                <div id="learning-style-options"></div>
+                <button id="learning-style-submit">Submit</button>
+            </div>
+            <p id="learning-style-result"></p>
+        </section>
+
+        <section id="study-section">
+            <h2>Study Practice</h2>
+            <div id="study-options">
+                <button class="study-option" data-subject="math">Math</button>
+                <button class="study-option" data-subject="english">English</button>
+            </div>
+            <div id="study-quiz" style="display: none;">
+                <p id="study-question"></p>
+                <input type="text" id="study-answer" placeholder="Your answer">
+                <button id="study-submit">Submit</button>
+                <button id="study-next" style="display: none;">Next Question</button>
+            </div>
+            <p id="study-result"></p>
+        </section>
+
+        <section id="performance">
+            <h2>Performance Tracker</h2>
+    <div id="performance-data">
+        <h3>Math Performance</h3>
+        <p id="math-score"></p>
+        <h3>English Performance</h3>
+        <p id="english-score"></p>
+        <h3>Learning Style</h3>
+        <p id="learning-style"></p>
+        <h3>Cognitive Score</h3>
+        <p id="cognitive-score"></p>
+        <h3>Learner Type</h3>
+        <p id="learner-type">Not determined</p>
+    </div>
+            <canvas id="performance-chart" width="400" height="200"></canvas>
+        </section>
+        <section id="extracurricular">
+            <h2>Extracurricular Activities</h2>
+            <div id="extracurricular-form">
+                <h3>What activities are you involved in?</h3>
+                <div>
+                    <input type="checkbox" id="sports" name="activity" value="sports">
+                    <label for="sports">Sports</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="music" name="activity" value="music">
+                    <label for="music">Music</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="art" name="activity" value="art">
+                    <label for="art">Art</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="clubs" name="activity" value="clubs">
+                    <label for="clubs">Clubs</label>
+                </div>
+                <button id="extracurricular-submit">Submit</button>
+            </div>
+            <p id="extracurricular-result"></p>
+        </section>
+        
+        <section id="classroom-engagement">
+            <h2>Classroom Engagement</h2>
+            <div id="engagement-form">
+                <h3>Rate your classroom engagement:</h3>
+                <input type="range" id="engagement-slider" min="1" max="10" value="5">
+                <p>Engagement level: <span id="engagement-value">5</span></p>
+                <h3>Are you motivated in class?</h3>
+                <select id="motivation-select">
+                    <option value="">Select an option</option>
+                    <option value="high">Highly motivated</option>
+                    <option value="medium">Somewhat motivated</option>
+                    <option value="low">Not very motivated</option>
+                </select>
+                <button id="engagement-submit">Submit</button>
+            </div>
+            <p id="engagement-result"></p>
+        </section>
+        <section id="timed-quiz">
+            <h2>Timed Quiz</h2>
+            <p>This quiz will help determine if you're a fast or slow learner.</p>
+            <button id="start-timed-quiz">Start Timed Quiz</button>
+            <div id="quiz-area" style="display: none;">
+                <div id="timer">Time left: <span id="time-left">60</span> seconds</div>
+                <div id="timed-question"></div>
+                <input type="text" id="timed-answer" placeholder="Your answer">
+                <button id="timed-submit">Submit</button>
+            </div>
+            <p id="timed-result"></p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Student Learning Mentor. All rights reserved.</p>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
